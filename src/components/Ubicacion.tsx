@@ -35,7 +35,7 @@ export default function Ubicacion() {
             href={linkComoLlegar("Mi ubicación", contacto.direccion)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-block rounded-full bg-terracota-fuerte px-6 py-3 text-sm font-medium text-white hover:bg-terracota transition-colors"
+            className="mt-3 inline-block rounded-full bg-terracota-fuerte px-6 py-3 text-sm font-medium text-white hover:bg-terracota-oscuro transition-colors"
           >
             Cómo llegar a la residencia
           </a>

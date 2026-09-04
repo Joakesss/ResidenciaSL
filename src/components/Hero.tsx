@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="mt-9 flex flex-wrap gap-3">
             <a
               href="#preinscripcion"
-              className="rounded-full bg-terracota-fuerte px-7 py-3.5 font-medium hover:bg-terracota transition-colors"
+              className="rounded-full bg-terracota-fuerte px-7 py-3.5 font-medium hover:bg-terracota-oscuro transition-colors"
             >
               {preinscripcion.titulo}
             </a>

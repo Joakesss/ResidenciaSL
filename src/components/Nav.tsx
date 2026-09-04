@@ -35,7 +35,7 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <a
             href="#preinscripcion"
-            className="hidden sm:inline-block rounded-full bg-terracota-fuerte px-5 py-2 text-sm font-medium text-white hover:bg-terracota transition-colors"
+            className="hidden sm:inline-block rounded-full bg-terracota-fuerte px-5 py-2 text-sm font-medium text-white hover:bg-terracota-oscuro transition-colors"
           >
             Preinscribirme
           </a>

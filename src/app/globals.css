@@ -14,6 +14,9 @@
   --color-terracota: #b5623c;
   --color-terracota-fuerte: #8f4a2c;
   --color-terracota-claro: #f7e8e0;
+  /* Hover de botones: oscurece. Aclarar bajaba el contraste con el texto
+     blanco a 4.4, por debajo del minimo AA de 4.5. */
+  --color-terracota-oscuro: #73391f;
 
   /* Verde: acento de confirmacion / disponibilidad */
   --color-verde: #4f6b44;

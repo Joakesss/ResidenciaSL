@@ -11,7 +11,7 @@ export default function Normas() {
       <ul className="grid gap-5 sm:grid-cols-2">
         {contenido.normas.map((n, i) => (
           <li key={n.id} className="flex gap-4 rounded-2xl border border-borde bg-superficie p-6">
-            <span aria-hidden="true" className="font-display text-2xl text-terracota/50">
+            <span aria-hidden="true" className="font-display text-2xl text-terracota">
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
