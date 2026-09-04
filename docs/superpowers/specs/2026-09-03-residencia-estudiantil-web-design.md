@@ -42,8 +42,10 @@ segundo grupo sin perder al primero.
 | Mail | **No se publica.** Contacto sólo por WhatsApp y formulario |
 | Habitaciones | 2 privadas individuales + 1 compartida para 2 personas (4 camas totales) |
 | Servicios incluidos | Internet, luz, agua, gas |
-| Baño | Compartido |
+| Baño | Compartido — **uno solo para las 4 personas** |
 | Cocina | Compartida |
+| Lavarropas | Sí, disponible |
+| Limpieza | **Espacios comunes a cargo de la residencia** (persona contratada). Cada residente limpia su habitación |
 | Amoblado | Sí. Colchón a definir |
 | Precios | **No se publican.** "Consultar valores" → WhatsApp |
 | Nombre / marca | Sin nombre propio por ahora. Genérico: "Residencia Estudiantil en San Luis" |
@@ -152,6 +154,20 @@ entenderlo.
 Ocultarlo sería peor que inútil: la persona se entera en la visita y siente que
 le mintieron, justo cuando estaba por decidir.
 
+### 4.2 La limpieza de comunes es un diferencial, no letra chica
+
+**Los espacios comunes los limpia una persona contratada por la residencia.**
+Cada residente limpia su propia habitación.
+
+Esto va destacado en la sección de servicios, no enterrado en las normas. En la
+mayoría de las pensiones la limpieza de cocina y baño queda librada a que alguien
+se haga cargo, y es la fuente número uno de conflictos de convivencia — algo que
+cualquier persona que haya compartido casa reconoce al instante.
+
+Es además el argumento que más tranquiliza a la madre o el padre que paga, que
+es quien suele decidir. Sumado a "baño compartido entre 4 personas", convierte lo
+compartido de objeción en propuesta.
+
 ---
 
 ## 5. Agregados fuera del pedido original
@@ -203,12 +219,10 @@ grep -rn "PREGUNTA(" src/
 |---|---|---|
 | `colchon` | ¿Lo pone la residencia o lo trae el estudiante? | **Recomendación: ponerlo la residencia.** Nadie viaja desde otra provincia con un colchón. Es un costo chico que saca una fricción grande, y habilita el argumento "vení con un bolso". Mientras no se defina, la web no lo menciona |
 | `formulario` | Link del Google Form | Placeholder. **El sitio no se publica sin esto** — es el objetivo de conversión |
-| `bano-cantidad` | ¿Un solo baño para las 4 personas, o más de uno? | Se asume uno. Si hubiera dos, es un argumento fuerte y hay que decirlo |
 | `deposito` | ¿Se pide depósito, garantía o mes adelantado? | No se menciona. Es la pregunta que más llega por WhatsApp, debería estar en el FAQ |
 | `contrato` | ¿Plazo mínimo? ¿Ciclo lectivo o mes a mes? | No se menciona |
-| `lavarropas` | ¿Hay? ¿Uso incluido? | No se menciona en equipamiento hasta confirmar |
-| `limpieza` | ¿Limpieza de áreas comunes incluida o a cargo de los residentes? | Se asume a cargo de los residentes, según normas |
 | `visitas` | ¿Se permiten? ¿Con qué condiciones? | Se redacta una norma genérica, a confirmar |
+| `lavarropas-uso` | ¿El uso del lavarropas está incluido o se cobra aparte? | Se asume incluido |
 | `normas` | Todo el reglamento es **borrador propuesto**, no el real | Debe revisarlo la familia antes de publicar |
 | `nombre` | ¿Nombre propio más adelante? | Genérico. Centralizado para cambiarlo en una línea |
 
