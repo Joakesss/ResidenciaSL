@@ -19,7 +19,7 @@ export const contenido: Contenido = {
     nombre: "Residencia Estudiantil en San Luis",
     tagline: "Tu lugar para estudiar, descansar y sentirte en casa",
     descripcion:
-      "Residencia estudiantil en San Luis capital con habitaciones privadas e individuales y habitacion compartida. Internet, luz, agua y gas incluidos. A pasos de la vida universitaria.",
+      "Residencia estudiantil en San Luis capital con habitaciones privadas e individuales y habitacion compartida. Internet y limpieza de espacios comunes incluidos. A pasos de la vida universitaria.",
     // PREGUNTA(dominio): definir el dominio final antes de publicar.
     // Afecta los links absolutos de Open Graph y el JSON-LD.
     url: "https://residencia-san-luis.example",
@@ -33,10 +33,8 @@ export const contenido: Contenido = {
   },
 
   preinscripcion: {
-    // PREGUNTA(formulario): falta el link del Google Form.
-    //   EL SITIO NO SE PUBLICA SIN ESTO: es el objetivo de conversion.
-    //   Mientras este vacio, el boton cae automaticamente a WhatsApp.
-    urlFormulario: "",
+    urlFormulario:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdZlczMtXFwM9jtJV7COQMzINxY7hiSy_Q0gYz2pOSXfaNVZA/viewform",
     titulo: "Reservá tu lugar",
     texto:
       "Completá el formulario de preinscripción y nos ponemos en contacto con vos para coordinar una visita y contarte los valores. No te compromete a nada.",
@@ -45,8 +43,9 @@ export const contenido: Contenido = {
   servicios: [
     {
       id: "internet",
-      nombre: "Internet incluido",
+      nombre: "Internet",
       detalle: "Wifi en toda la casa, para cursar y rendir sin sobresaltos.",
+      incluido: "si",
       icono: "wifi",
       destacado: true,
     },
@@ -55,27 +54,36 @@ export const contenido: Contenido = {
       nombre: "Limpieza de espacios comunes",
       detalle:
         "Una persona se ocupa de la cocina, el baño y los espacios comunes. Vos solo te ocupás de tu habitación.",
+      incluido: "si",
       icono: "escoba",
       destacado: true,
     },
+    // PREGUNTA(expensas): la familia todavia no decidio si luz, agua y gas van
+    //   incluidos en el alquiler o se cobran aparte como expensa.
+    //   Mientras sigan en "a-confirmar" el sitio muestra "Consultar" y NO
+    //   afirma que estan incluidos. Cuando se decida: poner "si" (o ajustar
+    //   el detalle si van aparte). Hay un test que falla si se afirma sin confirmar.
     {
       id: "luz",
-      nombre: "Luz incluida",
-      detalle: "Sin factura aparte ni sorpresas a fin de mes.",
+      nombre: "Luz",
+      detalle: "Consultanos cómo se maneja el servicio de luz.",
+      incluido: "a-confirmar",
       icono: "luz",
       destacado: false,
     },
     {
       id: "agua",
-      nombre: "Agua incluida",
-      detalle: "Servicio de agua incluido en el alquiler.",
+      nombre: "Agua",
+      detalle: "Consultanos cómo se maneja el servicio de agua.",
+      incluido: "a-confirmar",
       icono: "agua",
       destacado: false,
     },
     {
       id: "gas",
-      nombre: "Gas incluido",
-      detalle: "Para cocinar y para el agua caliente, sin costo extra.",
+      nombre: "Gas",
+      detalle: "Para cocinar y para el agua caliente. Consultanos cómo se maneja.",
+      incluido: "a-confirmar",
       icono: "gas",
       destacado: false,
     },
@@ -83,6 +91,7 @@ export const contenido: Contenido = {
       id: "amoblado",
       nombre: "Habitaciones amobladas",
       detalle: "Vienen amobladas: llegás y te instalás.",
+      incluido: "si",
       icono: "cama",
       destacado: false,
     },
@@ -230,7 +239,7 @@ export const contenido: Contenido = {
       id: "incluye",
       pregunta: "¿Qué incluye el alquiler?",
       respuesta:
-        "Internet, luz, agua y gas están incluidos. También la limpieza de los espacios comunes. La habitación viene amoblada.",
+        "Internet y la limpieza de los espacios comunes están incluidos, y la habitación viene amoblada. Por luz, agua y gas, escribinos por WhatsApp y te contamos cómo se maneja.",
     },
     {
       id: "bano",

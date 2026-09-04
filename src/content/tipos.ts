@@ -11,10 +11,19 @@ export interface Habitacion {
   imagen: string;
 }
 
+/**
+ * "si"          = confirmado, incluido en el alquiler.
+ * "a-confirmar" = todavia no se decidio si va incluido o se cobra aparte.
+ *                 Mientras este asi, el sitio NO puede afirmar que esta
+ *                 incluido: muestra "Consultar".
+ */
+export type EstadoInclusion = "si" | "a-confirmar";
+
 export interface Servicio {
   id: string;
   nombre: string;
   detalle: string;
+  incluido: EstadoInclusion;
   /** Icono inline por nombre; lo resuelve el componente Servicios. */
   icono: string;
   /** true = se muestra destacado. Reservado para diferenciales reales. */

@@ -73,6 +73,20 @@ preinscripcion: {
 lugar del formulario. Es a propósito: es preferible que la gente escriba por
 WhatsApp antes que tocar un botón que no lleva a ningún lado.
 
+### Marcar un servicio como incluido o a confirmar
+
+En la lista `servicios`, cada uno tiene un campo `incluido`:
+
+```ts
+incluido: "si",           // muestra la etiqueta verde "Incluido"
+incluido: "a-confirmar",  // muestra la etiqueta gris "Consultar"
+```
+
+Mientras un servicio esté en `"a-confirmar"`, **el sitio no puede decir que está
+incluido**. Hay una verificación automática que falla si el texto lo promete.
+Es a propósito: prometer que la luz está incluida y después cobrar una expensa
+es la forma más rápida de perder la confianza de alguien que ya se mudó.
+
 ---
 
 ### Reemplazar las fotos
@@ -149,7 +163,12 @@ Listo. Netlify devuelve una dirección web que se puede compartir. Es gratis.
 
 ## Antes de publicar
 
-- [ ] Cargar el link del Google Form en `preinscripcion.urlFormulario`
+- [x] ~~Cargar el link del Google Form~~ (hecho el 2026-09-04)
+- [ ] **Definir si luz, agua y gas van incluidos o se cobran aparte como expensa.**
+      Hasta que se decida, el sitio muestra "Consultar" en esos tres y no
+      promete que estan incluidos. Para cerrarlo: en `servicios`, cambiar
+      `incluido: "a-confirmar"` por `incluido: "si"`, o ajustar el `detalle`
+      si van aparte. Hay un test que falla si se promete sin confirmar.
 - [ ] Reemplazar los placeholders por fotos reales
 - [ ] Reemplazar `public/img/og-image.png` por una foto real de la casa
       (es la imagen que ve la gente cuando le comparten el link por WhatsApp)

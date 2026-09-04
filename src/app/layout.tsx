@@ -50,11 +50,15 @@ const jsonLd = {
     addressRegion: "San Luis",
     addressCountry: "AR",
   },
-  amenityFeature: contenido.servicios.map((s) => ({
-    "@type": "LocationFeatureSpecification",
-    name: s.nombre,
-    value: true,
-  })),
+  // Solo lo confirmado. Declararle a Google que un servicio esta incluido
+  // cuando todavia no se decidio seria publicar un dato falso.
+  amenityFeature: contenido.servicios
+    .filter((s) => s.incluido === "si")
+    .map((s) => ({
+      "@type": "LocationFeatureSpecification",
+      name: s.nombre,
+      value: true,
+    })),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

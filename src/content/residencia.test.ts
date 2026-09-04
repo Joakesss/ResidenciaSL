@@ -9,9 +9,25 @@ describe("contenido de la residencia", () => {
     expect(plazas).toBe(4);
   });
 
-  it("declara los cuatro servicios incluidos", () => {
+  it("lista los cuatro servicios de la casa", () => {
     const ids = contenido.servicios.map((s) => s.id);
     expect(ids).toEqual(expect.arrayContaining(["internet", "luz", "agua", "gas"]));
+  });
+
+  it("NO afirma que un servicio esta incluido mientras siga a confirmar", () => {
+    // Ver PREGUNTA(expensas): luz, agua y gas pueden terminar cobrandose aparte.
+    // Prometer inclusion y despues cobrar expensas es la peor forma de perder
+    // la confianza de alguien que ya se mudo.
+    for (const s of contenido.servicios) {
+      if (s.incluido === "a-confirmar") {
+        expect(`${s.nombre} ${s.detalle}`.toLowerCase()).not.toMatch(/incluid|sin costo|sin cargo/);
+      }
+    }
+  });
+
+  it("el formulario de preinscripcion apunta a un Google Form real", () => {
+    const url = contenido.preinscripcion.urlFormulario;
+    expect(url).toMatch(/^https:\/\/docs\.google\.com\/forms\//);
   });
 
   it("destaca la limpieza de espacios comunes como servicio", () => {

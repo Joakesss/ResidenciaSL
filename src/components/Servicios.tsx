@@ -6,8 +6,8 @@ export default function Servicios() {
   return (
     <Seccion
       id="servicios"
-      titulo="Todo incluido"
-      bajada="Sin facturas aparte ni sorpresas a fin de mes. Un solo pago y listo."
+      titulo="Qué incluye"
+      bajada="Internet y la limpieza de los espacios comunes están incluidos en el alquiler. Por luz, agua y gas, escribinos y te contamos cómo se maneja."
       fondo="arena"
     >
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -20,9 +20,22 @@ export default function Servicios() {
                 : "border-borde bg-superficie"
             }`}
           >
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-terracota-fuerte text-white">
-              <Icono nombre={s.icono} />
-            </span>
+            <div className="flex items-start justify-between gap-3">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-terracota-fuerte text-white">
+                <Icono nombre={s.icono} />
+              </span>
+              {/* Mientras el servicio siga "a-confirmar" no se afirma que esta
+                  incluido. Ver PREGUNTA(expensas) en residencia.ts */}
+              <span
+                className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium ${
+                  s.incluido === "si"
+                    ? "bg-verde-claro text-verde"
+                    : "bg-arena text-tinta-suave"
+                }`}
+              >
+                {s.incluido === "si" ? "Incluido" : "Consultar"}
+              </span>
+            </div>
             <h3 className="mt-4 font-display text-xl text-tinta">{s.nombre}</h3>
             <p className="mt-1.5 text-sm text-tinta-suave">{s.detalle}</p>
           </li>

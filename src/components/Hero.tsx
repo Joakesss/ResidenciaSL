@@ -24,8 +24,8 @@ export default function Hero() {
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
             Habitaciones privadas individuales y compartida, amobladas, con
-            internet, luz, agua y gas incluidos. Somos una casa de 4 personas:
-            tranquila, cuidada y cerca de todo.
+            internet y limpieza de espacios comunes incluidos. Somos una casa de
+            4 personas: tranquila, cuidada y cerca de todo.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a
