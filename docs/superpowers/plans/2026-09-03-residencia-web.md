@@ -62,7 +62,7 @@
 npm init -y
 npm install next@15 react@19 react-dom@19
 npm install -D typescript @types/node @types/react @types/react-dom \
-  tailwindcss @tailwindcss/postcss postcss \
+  tailwindcss @tailwindcss/postcss postcss sharp \
   vitest @vitejs/plugin-react jsdom \
   @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
@@ -958,6 +958,7 @@ git commit -m "feat: modelo de contenido centralizado con dudas marcadas"
  * nombre en public/img/. No hace falta tocar codigo.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
+import sharp from "sharp";
 
 const DESTINO = "public/img";
 
@@ -981,17 +982,37 @@ const svg = (texto) => `<svg xmlns="http://www.w3.org/2000/svg" width="1200" hei
 </svg>`;
 
 mkdirSync(DESTINO, { recursive: true });
+
 for (const [nombre, texto] of IMAGENES) {
+  if (nombre === "og-image") continue;
   writeFileSync(`${DESTINO}/${nombre}.svg`, svg(texto));
   console.log(`  ${DESTINO}/${nombre}.svg`);
 }
+
+/**
+ * og-image va en PNG, no en SVG: WhatsApp, Facebook y Twitter NO renderizan
+ * SVG en las tarjetas de preview. Como el sitio se va a compartir sobre todo
+ * por WhatsApp, un SVG aca significa link sin imagen — justo donde mas importa.
+ */
+await sharp(Buffer.from(svg("Residencia Estudiantil San Luis")))
+  .png()
+  .toFile(`${DESTINO}/og-image.png`);
+console.log(`  ${DESTINO}/og-image.png (PNG: las previews de WhatsApp no leen SVG)`);
+
 console.log(`\n${IMAGENES.length} placeholders generados.`);
 ```
 
 - [ ] **Step 2: Generar los placeholders**
 
 Run: `node scripts/generar-placeholders.mjs`
-Expected: 9 archivos `.svg` en `public/img/`.
+Expected: 8 archivos `.svg` + `og-image.png` en `public/img/`.
+
+Verificar que el PNG es un PNG real:
+
+```bash
+file public/img/og-image.png
+```
+Expected: `PNG image data, 1200 x 800`.
 
 - [ ] **Step 3: Ajustar las extensiones en el contenido**
 
@@ -1087,7 +1108,6 @@ Expected: FAIL — no existe `./Nav`.
 "use client";
 
 import { useState } from "react";
-import { contenido } from "@/content/residencia";
 
 const SECCIONES = [
   { href: "#habitaciones", label: "Habitaciones" },
@@ -1220,7 +1240,8 @@ export const metadata: Metadata = {
     siteName: sitio.nombre,
     title: `${sitio.nombre} — ${sitio.tagline}`,
     description: sitio.descripcion,
-    images: [{ url: "/img/og-image.svg", width: 1200, height: 800, alt: sitio.nombre }],
+    // PNG obligatorio: las previews de WhatsApp y Facebook no renderizan SVG.
+    images: [{ url: "/img/og-image.png", width: 1200, height: 800, alt: sitio.nombre }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
@@ -1716,10 +1737,10 @@ export default function Galeria() {
             >
               {item.tipo === "video" ? (
                 <img src={item.poster ?? item.src} alt={item.alt}
-                  className="aspect-4/3 w-full object-cover transition-transform group-hover:scale-105" />
+                  className="aspect-[4/3] w-full object-cover transition-transform group-hover:scale-105" />
               ) : (
                 <img src={item.src} alt={item.alt}
-                  className="aspect-4/3 w-full object-cover transition-transform group-hover:scale-105" />
+                  className="aspect-[4/3] w-full object-cover transition-transform group-hover:scale-105" />
               )}
             </button>
           </li>
@@ -2428,6 +2449,8 @@ Expected: `index.html`, `404.html`, `_next/`, `img/`.
 - [ ] Definir si el colchón lo pone la residencia o el estudiante
 - [ ] Verificar las distancias reales a UNSL, terminal y centro, o dejarlas en null
 - [ ] Confirmar depósito / garantía / plazo mínimo y agregarlos al FAQ
+- [ ] Reemplazar `public/img/og-image.png` por una foto real de la casa
+      (es la imagen que ve la gente cuando le comparten el link por WhatsApp)
 - [ ] Cargar el dominio final en `sitio.url` (afecta el preview de WhatsApp)
 - [ ] Revisar que no quede ningún `PREGUNTA(` sin resolver: `grep -rn "PREGUNTA(" src/`
 ```
