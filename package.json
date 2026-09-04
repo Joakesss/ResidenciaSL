@@ -1,0 +1,36 @@
+{
+  "name": "residencia-san-luis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web promocional de una residencia estudiantil en San Luis, Argentina",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "placeholders": "node scripts/generar-placeholders.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.25",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^26.4.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "jsdom": "^30.0.1",
+    "postcss": "^8.5.28",
+    "sharp": "^0.35.4",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.0"
+  }
+}

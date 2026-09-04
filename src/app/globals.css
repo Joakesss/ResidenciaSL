@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fondos */
+  --color-crema: #fbf7f2;
+  --color-superficie: #ffffff;
+  --color-arena: #f2e9de;
+
+  /* Texto */
+  --color-tinta: #2e2a26;
+  --color-tinta-suave: #5c534a;
+
+  /* Terracota: -fuerte lleva texto blanco, -claro es fondo */
+  --color-terracota: #b5623c;
+  --color-terracota-fuerte: #8f4a2c;
+  --color-terracota-claro: #f7e8e0;
+
+  /* Verde: acento de confirmacion / disponibilidad */
+  --color-verde: #4f6b44;
+  --color-verde-claro: #e8efe4;
+
+  --color-borde: #e5dcd1;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Compensa el nav fijo al saltar a una seccion con ancla */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-crema);
+  color: var(--color-tinta);
+  font-family: var(--font-sans);
+}
+
+/* Respeta a quien pidio menos movimiento en su sistema operativo */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
