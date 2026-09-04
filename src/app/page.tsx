@@ -4,6 +4,7 @@ import Habitaciones from "@/components/Habitaciones";
 import Galeria from "@/components/Galeria";
 import Equipamiento from "@/components/Equipamiento";
 import Normas from "@/components/Normas";
+import Ubicacion from "@/components/Ubicacion";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Galeria />
       <Equipamiento />
       <Normas />
+      <Ubicacion />
     </main>
   );
 }
