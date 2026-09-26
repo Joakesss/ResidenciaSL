@@ -7,7 +7,7 @@ export default function Servicios() {
     <Seccion
       id="servicios"
       titulo="Qué incluye"
-      bajada="Internet y la limpieza de los espacios comunes están incluidos en el alquiler. Por luz, agua y gas, escribinos y te contamos cómo se maneja."
+      bajada="Internet, el agua, la limpieza de los espacios comunes y la calefacción están incluidos en el alquiler. La luz y el gas se pagan aparte y se dividen entre los residentes: cuidándolos entre todos, cada uno paga menos."
       fondo="arena"
     >
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -25,7 +25,7 @@ export default function Servicios() {
                 <Icono nombre={s.icono} />
               </span>
               {/* Mientras el servicio siga "a-confirmar" no se afirma que esta
-                  incluido. Ver PREGUNTA(expensas) en residencia.ts */}
+                  incluido. */}
               <span
                 className={`shrink-0 rounded-full px-3 py-1 text-xs font-medium ${
                   s.incluido === "si"
@@ -33,7 +33,7 @@ export default function Servicios() {
                     : "bg-arena text-tinta-suave"
                 }`}
               >
-                {s.incluido === "si" ? "Incluido" : "Consultar"}
+                {s.incluido === "si" ? "Incluido" : s.incluido === "aparte" ? "Aparte" : "Consultar"}
               </span>
             </div>
             <h3 className="mt-4 font-display text-xl text-tinta">{s.nombre}</h3>

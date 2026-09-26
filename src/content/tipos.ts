@@ -13,11 +13,12 @@ export interface Habitacion {
 
 /**
  * "si"          = confirmado, incluido en el alquiler.
+ * "aparte"      = confirmado, se paga por separado del alquiler: muestra "Aparte".
  * "a-confirmar" = todavia no se decidio si va incluido o se cobra aparte.
  *                 Mientras este asi, el sitio NO puede afirmar que esta
  *                 incluido: muestra "Consultar".
  */
-export type EstadoInclusion = "si" | "a-confirmar";
+export type EstadoInclusion = "si" | "aparte" | "a-confirmar";
 
 export interface Servicio {
   id: string;

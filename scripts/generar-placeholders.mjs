@@ -19,7 +19,6 @@ const IMAGENES = [
   ["habitacion-privada-1", "Habitacion privada 1"],
   ["habitacion-privada-2", "Habitacion privada 2"],
   ["habitacion-compartida", "Habitacion compartida"],
-  ["patio", "Patio"],
   ["og-image", "Residencia Estudiantil San Luis"],
 ];
 

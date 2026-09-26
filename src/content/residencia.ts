@@ -58,32 +58,40 @@ export const contenido: Contenido = {
       icono: "escoba",
       destacado: true,
     },
-    // PREGUNTA(expensas): la familia todavia no decidio si luz, agua y gas van
-    //   incluidos en el alquiler o se cobran aparte como expensa.
-    //   Mientras sigan en "a-confirmar" el sitio muestra "Consultar" y NO
-    //   afirma que estan incluidos. Cuando se decida: poner "si" (o ajustar
-    //   el detalle si van aparte). Hay un test que falla si se afirma sin confirmar.
+    {
+      id: "calefaccion",
+      nombre: "Calefacción",
+      detalle: "Todas las habitaciones tienen calefacción.",
+      incluido: "si",
+      icono: "calefaccion",
+      destacado: false,
+    },
+    // Luz y gas se pagan aparte y la factura se divide entre los residentes:
+    //   cuidando los servicios, cada uno paga menos.
+    //   El agua si esta incluida en el alquiler.
     {
       id: "luz",
       nombre: "Luz",
-      detalle: "Consultanos cómo se maneja el servicio de luz.",
-      incluido: "a-confirmar",
+      detalle:
+        "Se paga aparte y la factura se divide entre los residentes: si la cuidamos entre todos, cada uno paga menos.",
+      incluido: "aparte",
       icono: "luz",
       destacado: false,
     },
     {
       id: "agua",
       nombre: "Agua",
-      detalle: "Consultanos cómo se maneja el servicio de agua.",
-      incluido: "a-confirmar",
+      detalle: "Incluida en el alquiler, sin costo extra.",
+      incluido: "si",
       icono: "agua",
       destacado: false,
     },
     {
       id: "gas",
       nombre: "Gas",
-      detalle: "Para cocinar y para el agua caliente. Consultanos cómo se maneja.",
-      incluido: "a-confirmar",
+      detalle:
+        "Para cocinar y para el agua caliente. Se paga aparte y se divide entre los residentes.",
+      incluido: "aparte",
       icono: "gas",
       destacado: false,
     },
@@ -137,7 +145,6 @@ export const contenido: Contenido = {
     { id: "privada-1", tipo: "imagen", src: "/img/habitacion-privada-1.svg", alt: "Habitación privada individual" },
     { id: "privada-2", tipo: "imagen", src: "/img/habitacion-privada-2.svg", alt: "Segunda habitación privada individual" },
     { id: "compartida", tipo: "imagen", src: "/img/habitacion-compartida.svg", alt: "Habitación compartida para dos personas" },
-    { id: "patio", tipo: "imagen", src: "/img/patio.svg", alt: "Patio de la residencia" },
   ],
 
   equipamiento: [
@@ -146,7 +153,6 @@ export const contenido: Contenido = {
     { id: "lavarropas", nombre: "Lavarropas", uso: "compartido" },
     { id: "bano", nombre: "Baño completo", uso: "compartido" },
     { id: "living", nombre: "Espacio común de estar", uso: "compartido" },
-    { id: "patio", nombre: "Patio", uso: "compartido" },
     { id: "wifi", nombre: "Wifi en toda la casa", uso: "compartido" },
     { id: "cama", nombre: "Cama", uso: "propio" },
     { id: "escritorio", nombre: "Escritorio para estudiar", uso: "propio" },
@@ -239,7 +245,7 @@ export const contenido: Contenido = {
       id: "incluye",
       pregunta: "¿Qué incluye el alquiler?",
       respuesta:
-        "Internet y la limpieza de los espacios comunes están incluidos, y la habitación viene amoblada. Por luz, agua y gas, escribinos por WhatsApp y te contamos cómo se maneja.",
+        "Internet, el agua, la limpieza de los espacios comunes y la calefacción en todas las habitaciones están incluidos, y la habitación viene amoblada. La luz y el gas se pagan aparte y se dividen entre los residentes, así que cuidándolos entre todos cada uno paga menos.",
     },
     {
       id: "bano",
@@ -251,7 +257,7 @@ export const contenido: Contenido = {
       id: "cocina",
       pregunta: "¿Puedo cocinar?",
       respuesta:
-        "Sí. La cocina es compartida y está equipada, con heladera. También hay lavarropas.",
+        "Sí. La cocina es compartida y está equipada, con heladera, microondas y pava eléctrica. También hay lavarropas.",
     },
     {
       id: "precio",

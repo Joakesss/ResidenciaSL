@@ -79,6 +79,7 @@ En la lista `servicios`, cada uno tiene un campo `incluido`:
 
 ```ts
 incluido: "si",           // muestra la etiqueta verde "Incluido"
+incluido: "aparte",       // muestra la etiqueta gris "Aparte"
 incluido: "a-confirmar",  // muestra la etiqueta gris "Consultar"
 ```
 
@@ -105,7 +106,6 @@ las reales:
 | `habitacion-privada-1.jpg` | Primera habitación individual |
 | `habitacion-privada-2.jpg` | Segunda habitación individual |
 | `habitacion-compartida.jpg` | La habitación de dos |
-| `patio.jpg` | El patio |
 | `og-image.jpg` | La foto que aparece cuando compartís el link por WhatsApp |
 
 **2.** En `src/content/residencia.ts`, cambiá `.svg` por `.jpg` en todas las
@@ -164,11 +164,8 @@ Listo. Netlify devuelve una dirección web que se puede compartir. Es gratis.
 ## Antes de publicar
 
 - [x] ~~Cargar el link del Google Form~~ (hecho el 2026-09-04)
-- [ ] **Definir si luz, agua y gas van incluidos o se cobran aparte como expensa.**
-      Hasta que se decida, el sitio muestra "Consultar" en esos tres y no
-      promete que estan incluidos. Para cerrarlo: en `servicios`, cambiar
-      `incluido: "a-confirmar"` por `incluido: "si"`, o ajustar el `detalle`
-      si van aparte. Hay un test que falla si se promete sin confirmar.
+- [x] ~~Definir luz y gas~~ (2026-09-25: se pagan aparte y se dividen entre los residentes)
+- [x] ~~Definir el agua~~ (2026-09-25: incluida en el alquiler)
 - [ ] Reemplazar los placeholders por fotos reales
 - [ ] Reemplazar `public/img/og-image.png` por una foto real de la casa
       (es la imagen que ve la gente cuando le comparten el link por WhatsApp)
