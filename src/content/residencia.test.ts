@@ -11,7 +11,7 @@ describe("contenido de la residencia", () => {
 
   it("lista los servicios de la casa", () => {
     const ids = contenido.servicios.map((s) => s.id);
-    expect(ids).toEqual(expect.arrayContaining(["internet", "calefaccion", "luz", "agua", "gas"]));
+    expect(ids).toEqual(expect.arrayContaining(["internet", "cocina", "calefaccion", "luz", "gas"]));
   });
 
   it("NO afirma que un servicio esta incluido mientras siga a confirmar", () => {
@@ -24,9 +24,9 @@ describe("contenido de la residencia", () => {
     }
   });
 
-  it("luz y gas figuran como pagos aparte y sin patio", () => {
+  it("luz, gas y calefaccion figuran como pagos aparte y sin patio", () => {
     const aparte = contenido.servicios.filter((s) => s.incluido === "aparte").map((s) => s.id);
-    expect(aparte).toEqual(expect.arrayContaining(["luz", "gas"]));
+    expect(aparte).toEqual(expect.arrayContaining(["luz", "gas", "calefaccion"]));
     expect(JSON.stringify(contenido).toLowerCase()).not.toContain("patio");
   });
 

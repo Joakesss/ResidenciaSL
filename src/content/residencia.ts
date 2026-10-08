@@ -19,7 +19,7 @@ export const contenido: Contenido = {
     nombre: "Residencia Estudiantil en San Luis",
     tagline: "Tu lugar para estudiar, descansar y sentirte en casa",
     descripcion:
-      "Residencia estudiantil en San Luis capital con habitaciones privadas e individuales y habitacion compartida. Internet y limpieza de espacios comunes incluidos. A pasos de la vida universitaria.",
+      "Residencia estudiantil en San Luis capital con habitaciones privadas individuales y una habitación grande, compartida o privada. Internet y limpieza de espacios comunes incluidos. A pasos de la vida universitaria.",
     // PREGUNTA(dominio): definir el dominio final antes de publicar.
     // Afecta los links absolutos de Open Graph y el JSON-LD.
     url: "https://residencia-san-luis.example",
@@ -59,16 +59,16 @@ export const contenido: Contenido = {
       destacado: true,
     },
     {
-      id: "calefaccion",
-      nombre: "Calefacción",
-      detalle: "Todas las habitaciones tienen calefacción.",
+      id: "cocina",
+      nombre: "Cocina totalmente equipada",
+      detalle:
+        "Todos los utensilios, heladera con freezer, pava eléctrica, microondas y lavarropas.",
       incluido: "si",
-      icono: "calefaccion",
+      icono: "cocina",
       destacado: false,
     },
     // Luz y gas se pagan aparte y la factura se divide entre los residentes:
     //   cuidando los servicios, cada uno paga menos.
-    //   El agua si esta incluida en el alquiler.
     {
       id: "luz",
       nombre: "Luz",
@@ -78,20 +78,22 @@ export const contenido: Contenido = {
       destacado: false,
     },
     {
-      id: "agua",
-      nombre: "Agua",
-      detalle: "Incluida en el alquiler, sin costo extra.",
-      incluido: "si",
-      icono: "agua",
-      destacado: false,
-    },
-    {
       id: "gas",
       nombre: "Gas",
       detalle:
-        "Para cocinar y para el agua caliente. También se divide entre los residentes.",
+        "Para cocinar, para el agua caliente y para los calefactores. También se divide entre los residentes.",
       incluido: "aparte",
       icono: "gas",
+      destacado: false,
+    },
+    // La residencia pone el calefactor; lo que consume entra en la factura de gas.
+    {
+      id: "calefaccion",
+      nombre: "Calefacción",
+      detalle:
+        "Todas las habitaciones tienen su calefactor a gas: el equipo lo ponemos nosotros y el consumo entra en la factura de gas.",
+      incluido: "aparte",
+      icono: "calefaccion",
       destacado: false,
     },
     {
@@ -125,10 +127,11 @@ export const contenido: Contenido = {
     },
     {
       id: "compartida",
-      nombre: "Habitación compartida",
+      nombre: "Habitación grande, compartida o privada",
       descripcion:
-        "Para dos personas, amoblada. Ideal si venís con un amigo o una amiga, o si preferís una opción más económica.",
+        "La habitación amplia de la casa, amoblada. Se puede compartir entre dos personas o tomarla privada para una sola, con posibilidad de cama de dos plazas.",
       capacidad: 2,
+      ocupacion: "Para 1 o 2 personas",
       disponibilidad: "disponible",
       imagen: "/img/HabitacionCompartida.jpeg",
     },
@@ -142,7 +145,7 @@ export const contenido: Contenido = {
     { id: "cocina", tipo: "imagen", src: "/img/Cocina.jpeg", alt: "Cocina compartida con heladera, microondas y barra de madera" },
     { id: "privada-1", tipo: "imagen", src: "/img/HabitacionPrivada1.jpeg", alt: "Habitación privada individual con calefactor" },
     { id: "privada-2", tipo: "imagen", src: "/img/HabitacionPrivada2.jpeg", alt: "Segunda habitación privada individual, con placard" },
-    { id: "compartida", tipo: "imagen", src: "/img/HabitacionCompartida.jpeg", alt: "Habitación compartida para dos personas" },
+    { id: "compartida", tipo: "imagen", src: "/img/HabitacionCompartida.jpeg", alt: "Habitación grande, armada con dos camas" },
     { id: "bano-1", tipo: "imagen", src: "/img/Banio1.jpeg", alt: "Baño compartido con ducha" },
     { id: "bano-2", tipo: "imagen", src: "/img/BanioFoto2.jpeg", alt: "Baño compartido, otra vista" },
   ],
@@ -156,13 +159,16 @@ export const contenido: Contenido = {
 
   equipamiento: [
     { id: "cocina", nombre: "Cocina equipada", uso: "compartido" },
-    { id: "heladera", nombre: "Heladera", uso: "compartido" },
+    { id: "utensilios", nombre: "Utensilios de cocina", uso: "compartido" },
+    { id: "heladera", nombre: "Heladera con freezer", uso: "compartido" },
+    { id: "microondas", nombre: "Microondas", uso: "compartido" },
+    { id: "pava", nombre: "Pava eléctrica", uso: "compartido" },
     { id: "lavarropas", nombre: "Lavarropas", uso: "compartido" },
     { id: "bano", nombre: "Baño completo", uso: "compartido" },
     { id: "living", nombre: "Espacio común de estar", uso: "compartido" },
     { id: "wifi", nombre: "Wifi en toda la casa", uso: "compartido" },
     { id: "cama", nombre: "Cama", uso: "propio" },
-    { id: "escritorio", nombre: "Escritorio para estudiar", uso: "propio" },
+    { id: "calefactor", nombre: "Calefactor a gas", uso: "propio" },
     { id: "placard", nombre: "Placard", uso: "propio" },
   ],
 
@@ -252,19 +258,19 @@ export const contenido: Contenido = {
       id: "incluye",
       pregunta: "¿Qué incluye el alquiler?",
       respuesta:
-        "Internet, el agua, la limpieza de los espacios comunes y la calefacción en todas las habitaciones están incluidos, y la habitación viene amoblada. La luz y el gas se pagan aparte y se dividen entre los residentes, así que cuidándolos entre todos cada uno paga menos.",
+        "Internet, la limpieza de los espacios comunes y la cocina totalmente equipada están incluidos, y la habitación viene amoblada. La luz y el gas se pagan aparte y se dividen entre los residentes, así que cuidándolos entre todos cada uno paga menos. Todas las habitaciones tienen calefactor a gas: el equipo está, y el consumo entra en la factura de gas.",
     },
     {
       id: "bano",
       pregunta: "¿El baño es compartido?",
       respuesta:
-        "Sí, el baño es compartido, pero entre 4 personas en total. No es una pensión grande: somos pocos y eso hace toda la diferencia en el día a día.",
+        "Sí, el baño es compartido, pero entre 4 personas como máximo. No es una pensión grande: somos pocos y eso hace toda la diferencia en el día a día.",
     },
     {
       id: "cocina",
       pregunta: "¿Puedo cocinar?",
       respuesta:
-        "Sí. La cocina es compartida y está equipada, con heladera, microondas y pava eléctrica. También hay lavarropas.",
+        "Sí. La cocina es compartida y está totalmente equipada: todos los utensilios, heladera con freezer, microondas y pava eléctrica. También hay lavarropas.",
     },
     {
       id: "precio",

@@ -6,6 +6,8 @@ export interface Habitacion {
   descripcion: string;
   /** Cuantas personas duermen en esta habitacion. */
   capacidad: number;
+  /** Texto de ocupacion para la tarjeta. Si falta, se arma con capacidad. */
+  ocupacion?: string;
   disponibilidad: Disponibilidad;
   /** Ruta publica, ej. "/img/HabitacionPrivada1.jpeg". */
   imagen: string;

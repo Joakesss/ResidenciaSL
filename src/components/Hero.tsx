@@ -23,9 +23,10 @@ export default function Hero() {
             {sitio.tagline}
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
-            Habitaciones privadas individuales y compartida, amobladas, con
-            internet y limpieza de espacios comunes incluidos. Somos una casa de
-            4 personas: tranquila, cuidada y cerca de todo.
+            Habitaciones privadas individuales y una grande, compartida o
+            privada. Amobladas, con internet y limpieza de espacios comunes
+            incluidos. Somos una casa de hasta 4 personas: tranquila, cuidada y
+            cerca de todo.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a

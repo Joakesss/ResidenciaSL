@@ -9,7 +9,8 @@ const PATHS: Record<string, string> = {
   agua: "M12 2.7s6 6.4 6 10.3a6 6 0 11-12 0c0-3.9 6-10.3 6-10.3z",
   gas: "M12 2s5 5 5 9a5 5 0 11-10 0c0-4 5-9 5-9zM12 16a2 2 0 002-2c0-1.5-2-3-2-3s-2 1.5-2 3a2 2 0 002 2z",
   calefaccion: "M4 20h16M6 20V9M10 20V9M14 20V9M18 20V9M4 9h16M8 5c0-1 1-1 1-2M12 5c0-1 1-1 1-2M16 5c0-1 1-1 1-2",
-  cama: "M3 18v-6a2 2 0 012-2h14a2 2 0 012 2v6M3 18h18M3 18v2M21 18v2M7 10V7a1 1 0 011-1h3v4",
+  cocina: "M4 10h16v7a3 3 0 01-3 3H7a3 3 0 01-3-3v-7zM2 10h20M9 6V4M15 6V4M12 7V3",
+  cama:"M3 18v-6a2 2 0 012-2h14a2 2 0 012 2v6M3 18h18M3 18v2M21 18v2M7 10V7a1 1 0 011-1h3v4",
 };
 
 export default function Icono({ nombre, className = "h-6 w-6" }: { nombre: string; className?: string }) {

@@ -15,7 +15,7 @@ export default function Habitaciones() {
     <Seccion
       id="habitaciones"
       titulo="Las habitaciones"
-      bajada="Dos privadas individuales y una compartida para dos personas. En total somos 4 personas en la casa, así que los espacios comunes nunca se sienten llenos."
+      bajada="Dos privadas individuales y una grande, que puede ser compartida o privada. En total somos hasta 4 personas en la casa, así que los espacios comunes nunca se sienten llenos."
     >
       <ul className="grid gap-6 md:grid-cols-3">
         {habitaciones.map((h) => {
@@ -33,7 +33,8 @@ export default function Habitaciones() {
                   </div>
                   <p className="mt-2 text-sm text-tinta-suave flex-1">{h.descripcion}</p>
                   <p className="mt-4 text-sm text-tinta-suave">
-                    Para {h.capacidad} {h.capacidad === 1 ? "persona" : "personas"}
+                    {h.ocupacion ??
+                      `Para ${h.capacidad} ${h.capacidad === 1 ? "persona" : "personas"}`}
                   </p>
                   <a
                     href={linkWhatsapp(

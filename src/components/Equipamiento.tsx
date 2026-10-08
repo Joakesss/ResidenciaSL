@@ -38,7 +38,7 @@ export default function Equipamiento() {
           <h3 className="font-display text-2xl text-terracota-fuerte">Espacios compartidos</h3>
           {/* El numero es lo que vuelve tolerable lo compartido. Va siempre visible. */}
           <p className="mt-1 text-sm text-tinta-suave">
-            Compartidos entre <strong className="text-tinta">4 personas</strong> en total.
+            Compartidos entre <strong className="text-tinta">4 personas</strong> como máximo.
             La limpieza de estos espacios la hacemos nosotros.
           </p>
           <Lista items={compartido} />
