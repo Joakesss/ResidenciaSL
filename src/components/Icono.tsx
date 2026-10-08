@@ -1,5 +1,8 @@
-/** Iconos inline. Sin libreria externa: son seis y pesan menos asi. */
+/** Iconos inline. Sin libreria externa: son pocos y pesan menos asi. */
 const PATHS: Record<string, string> = {
+  check: "M5 13l4 4L19 7",
+  mas: "M12 5v14M5 12h14",
+  pregunta: "M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3M12 17h.01",
   wifi: "M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01",
   escoba: "M19 5l-7 7M8 21l-3-3 6-6 3 3-6 6zM14 10l3-3",
   luz: "M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z",

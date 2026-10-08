@@ -7,7 +7,7 @@ export interface Habitacion {
   /** Cuantas personas duermen en esta habitacion. */
   capacidad: number;
   disponibilidad: Disponibilidad;
-  /** Ruta publica, ej. "/img/habitacion-privada-1.svg". */
+  /** Ruta publica, ej. "/img/HabitacionPrivada1.jpeg". */
   imagen: string;
 }
 
@@ -96,6 +96,8 @@ export interface Contenido {
   servicios: Servicio[];
   habitaciones: Habitacion[];
   galeria: MediaGaleria[];
+  /** Fotos de la cuadra y los alrededores. */
+  entorno: MediaGaleria[];
   equipamiento: ItemEquipamiento[];
   normas: Norma[];
   lugaresCercanos: LugarCercano[];

@@ -78,9 +78,9 @@ WhatsApp antes que tocar un botón que no lleva a ningún lado.
 En la lista `servicios`, cada uno tiene un campo `incluido`:
 
 ```ts
-incluido: "si",           // muestra la etiqueta verde "Incluido"
-incluido: "aparte",       // muestra la etiqueta gris "Aparte"
-incluido: "a-confirmar",  // muestra la etiqueta gris "Consultar"
+incluido: "si",           // aparece en el grupo "Incluido en el alquiler"
+incluido: "aparte",       // aparece en el grupo "Se paga aparte"
+incluido: "a-confirmar",  // aparece en el grupo "A confirmar"
 ```
 
 Mientras un servicio esté en `"a-confirmar"`, **el sitio no puede decir que está
@@ -90,29 +90,31 @@ es la forma más rápida de perder la confianza de alguien que ya se mudó.
 
 ---
 
-### Reemplazar las fotos
+### Cambiar o agregar fotos
 
-Las imágenes que se ven hoy son dibujos que dicen "FOTO PENDIENTE". Para poner
-las reales:
+Las fotos están en la carpeta `public/img/`:
 
-**1.** Poné las fotos en la carpeta `public/img/` con estos nombres exactos:
-
-| Archivo | Qué foto va |
+| Archivo | Dónde se ve |
 |---|---|
-| `fachada.jpg` | El frente de la casa (es la que se ve grande arriba de todo) |
-| `living.jpg` | El espacio común de estar |
-| `cocina.jpg` | La cocina |
-| `bano.jpg` | El baño |
-| `habitacion-privada-1.jpg` | Primera habitación individual |
-| `habitacion-privada-2.jpg` | Segunda habitación individual |
-| `habitacion-compartida.jpg` | La habitación de dos |
-| `og-image.jpg` | La foto que aparece cuando compartís el link por WhatsApp |
+| `Entrada.jpeg`, `Cocina.jpeg`, `Banio1.jpeg`, `BanioFoto2.jpeg` | Galería "Conocé la casa" |
+| `HabitacionPrivada1.jpeg`, `HabitacionPrivada2.jpeg`, `HabitacionCompartida.jpeg` | Tarjetas de habitaciones y galería |
+| `Entorno1.jpeg`, `Entorno2.jpeg`, `Entorno3.jpeg` | "Así es la cuadra", en Dónde estamos |
+| `Entorno2.jpeg` | También es la foto grande de arriba de todo |
+| `og-image.png` | La que aparece cuando compartís el link por WhatsApp |
 
-**2.** En `src/content/residencia.ts`, cambiá `.svg` por `.jpg` en todas las
-rutas de imagen. Son las líneas que dicen `/img/algo.svg`.
+**Para cambiar una foto**, reemplazá el archivo por otro con el mismo nombre
+exacto.
 
-**3.** En `src/app/layout.tsx` y `src/components/Hero.tsx` hay dos rutas más
-(`og-image.png` y `fachada.svg`) que también hay que actualizar.
+**Para agregar una foto**, ponela en `public/img/` y sumá una línea en la lista
+`galeria` (fotos de la casa) o `entorno` (fotos de la cuadra) de
+`src/content/residencia.ts`, copiando una existente.
+
+**Ojo con el nombre:** tiene que estar escrito igual que el archivo, con las
+mismas mayúsculas. `cocina.jpeg` y `Cocina.jpeg` son distintos una vez publicado
+el sitio, aunque en la computadora funcionen los dos.
+
+La foto grande de arriba se cambia en `src/components/Hero.tsx` y la de
+WhatsApp en `src/app/layout.tsx`.
 
 **Consejo sobre las fotos:** sacalas de día, con las persianas abiertas y las
 camas hechas. Una foto luminosa de una habitación simple vende mucho más que
@@ -166,7 +168,8 @@ Listo. Netlify devuelve una dirección web que se puede compartir. Es gratis.
 - [x] ~~Cargar el link del Google Form~~ (hecho el 2026-09-04)
 - [x] ~~Definir luz y gas~~ (2026-09-25: se pagan aparte y se dividen entre los residentes)
 - [x] ~~Definir el agua~~ (2026-09-25: incluida en el alquiler)
-- [ ] Reemplazar los placeholders por fotos reales
+- [x] ~~Reemplazar los placeholders por fotos reales~~ (2026-10-08)
+- [ ] Sacar la foto del espacio común de estar y sumarla a la galería
 - [ ] Reemplazar `public/img/og-image.png` por una foto real de la casa
       (es la imagen que ve la gente cuando le comparten el link por WhatsApp)
 - [ ] Que la familia lea y apruebe las normas (hoy son un borrador)

@@ -72,8 +72,7 @@ export const contenido: Contenido = {
     {
       id: "luz",
       nombre: "Luz",
-      detalle:
-        "Se paga aparte y la factura se divide entre los residentes: si la cuidamos entre todos, cada uno paga menos.",
+      detalle: "La factura del mes se divide entre los residentes.",
       incluido: "aparte",
       icono: "luz",
       destacado: false,
@@ -90,7 +89,7 @@ export const contenido: Contenido = {
       id: "gas",
       nombre: "Gas",
       detalle:
-        "Para cocinar y para el agua caliente. Se paga aparte y se divide entre los residentes.",
+        "Para cocinar y para el agua caliente. También se divide entre los residentes.",
       incluido: "aparte",
       icono: "gas",
       destacado: false,
@@ -113,7 +112,7 @@ export const contenido: Contenido = {
         "Habitación individual para una persona, amoblada. Tu propio espacio para estudiar y descansar.",
       capacidad: 1,
       disponibilidad: "disponible",
-      imagen: "/img/habitacion-privada-1.svg",
+      imagen: "/img/HabitacionPrivada1.jpeg",
     },
     {
       id: "privada-2",
@@ -122,7 +121,7 @@ export const contenido: Contenido = {
         "Segunda habitación individual, amoblada, con las mismas comodidades.",
       capacidad: 1,
       disponibilidad: "disponible",
-      imagen: "/img/habitacion-privada-2.svg",
+      imagen: "/img/HabitacionPrivada2.jpeg",
     },
     {
       id: "compartida",
@@ -131,20 +130,28 @@ export const contenido: Contenido = {
         "Para dos personas, amoblada. Ideal si venís con un amigo o una amiga, o si preferís una opción más económica.",
       capacidad: 2,
       disponibilidad: "disponible",
-      imagen: "/img/habitacion-compartida.svg",
+      imagen: "/img/HabitacionCompartida.jpeg",
     },
   ],
 
-  // PREGUNTA(fotos): son placeholders. Reemplazar los archivos en public/img/
-  //   y cambiar la extension .svg por .jpg en las rutas de abajo.
+  // Fotos de la casa. El nombre del archivo tiene que coincidir exacto,
+  //   mayusculas incluidas, con el que esta en public/img/.
+  // PREGUNTA(fotos): falta la foto del espacio comun de estar.
   galeria: [
-    { id: "fachada", tipo: "imagen", src: "/img/fachada.svg", alt: "Frente de la residencia" },
-    { id: "living", tipo: "imagen", src: "/img/living.svg", alt: "Espacio común para estar y estudiar" },
-    { id: "cocina", tipo: "imagen", src: "/img/cocina.svg", alt: "Cocina compartida equipada" },
-    { id: "bano", tipo: "imagen", src: "/img/bano.svg", alt: "Baño compartido" },
-    { id: "privada-1", tipo: "imagen", src: "/img/habitacion-privada-1.svg", alt: "Habitación privada individual" },
-    { id: "privada-2", tipo: "imagen", src: "/img/habitacion-privada-2.svg", alt: "Segunda habitación privada individual" },
-    { id: "compartida", tipo: "imagen", src: "/img/habitacion-compartida.svg", alt: "Habitación compartida para dos personas" },
+    { id: "entrada", tipo: "imagen", src: "/img/Entrada.jpeg", alt: "Entrada de la residencia" },
+    { id: "cocina", tipo: "imagen", src: "/img/Cocina.jpeg", alt: "Cocina compartida con heladera, microondas y barra de madera" },
+    { id: "privada-1", tipo: "imagen", src: "/img/HabitacionPrivada1.jpeg", alt: "Habitación privada individual con calefactor" },
+    { id: "privada-2", tipo: "imagen", src: "/img/HabitacionPrivada2.jpeg", alt: "Segunda habitación privada individual, con placard" },
+    { id: "compartida", tipo: "imagen", src: "/img/HabitacionCompartida.jpeg", alt: "Habitación compartida para dos personas" },
+    { id: "bano-1", tipo: "imagen", src: "/img/Banio1.jpeg", alt: "Baño compartido con ducha" },
+    { id: "bano-2", tipo: "imagen", src: "/img/BanioFoto2.jpeg", alt: "Baño compartido, otra vista" },
+  ],
+
+  // Fotos de la cuadra. Se muestran en "Dónde estamos".
+  entorno: [
+    { id: "entorno-1", tipo: "imagen", src: "/img/Entorno1.jpeg", alt: "La calle de la residencia, arbolada y frente a un espacio verde" },
+    { id: "entorno-2", tipo: "imagen", src: "/img/Entorno2.jpeg", alt: "La cuadra de la residencia vista desde la vereda" },
+    { id: "entorno-3", tipo: "imagen", src: "/img/Entorno3.jpeg", alt: "Espacio verde frente a la residencia" },
   ],
 
   equipamiento: [

@@ -10,7 +10,7 @@ const ETIQUETA: Record<string, string> = {
 };
 
 export default function Ubicacion() {
-  const { contacto, lugaresCercanos } = contenido;
+  const { contacto, lugaresCercanos, entorno } = contenido;
 
   return (
     <Seccion
@@ -74,6 +74,24 @@ export default function Ubicacion() {
           </ul>
         </div>
       </div>
+
+      {entorno.length > 0 && (
+        <div className="mt-12">
+          <h3 className="font-display text-2xl text-terracota-fuerte">Así es la cuadra</h3>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-3">
+            {entorno.map((foto) => (
+              <li key={foto.id} className="overflow-hidden rounded-2xl border border-borde">
+                <img
+                  src={foto.src}
+                  alt={foto.alt}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </Seccion>
   );
 }

@@ -9,8 +9,8 @@ export default function Hero() {
     <section id="inicio" className="relative pt-16">
       <div className="relative min-h-[85vh] flex items-center">
         <img
-          src="/img/fachada.svg"
-          alt="Frente de la residencia estudiantil"
+          src="/img/Entorno2.jpeg"
+          alt="La cuadra de la residencia, arbolada y frente a un espacio verde"
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Degradado: sostiene el contraste del texto sobre cualquier foto */}

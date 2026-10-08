@@ -73,7 +73,7 @@ describe("contenido de la residencia", () => {
 
   it("toda habitacion apunta a una imagen dentro de /img", () => {
     for (const h of contenido.habitaciones) {
-      expect(h.imagen).toMatch(/^\/img\/.+\.(jpg|png|webp|svg)$/);
+      expect(h.imagen).toMatch(/^\/img\/.+\.(jpe?g|png|webp|svg)$/);
     }
   });
 
